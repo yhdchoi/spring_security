@@ -1,2 +1,2 @@
-# tms_auth_srv
-Traffic Monitoring System
+# Spring Security
+## Demo project for Spring Security & OAuth2
