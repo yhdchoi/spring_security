@@ -9,3 +9,4 @@
 - Spring Data Redis 3.3.1
 - JWT 4.4.0
 - OAuth2.0 (Google, Naver)
+- - Thymeleaf 3.1.2
