@@ -10,3 +10,4 @@
 - JWT 4.4.0
 - OAuth2.0 (Google, Naver)
 - Thymeleaf 3.1.2
+- PostgreSQL 15
