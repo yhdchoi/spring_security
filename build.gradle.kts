@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.yhdc"
-version = "0.0.1-SNAPSHOT"
+version = "spring_security_0.0.1"
 
 java {
 	toolchain {
@@ -24,17 +24,31 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
-	implementation("org.springframework.boot:spring-boot-starter-security")
+
+	// Web
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-	implementation("org.springframework.session:spring-session-core")
-	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
-	compileOnly("org.projectlombok:lombok")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+	// JPA
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+	// Database
 	runtimeOnly("org.postgresql:postgresql")
+
+	// Security
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+	implementation("org.springframework.session:spring-session-core")
+
+	// Tool
+	implementation("org.springframework.boot:spring-boot-starter-validation:3.3.1")
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	annotationProcessor("org.projectlombok:lombok")
+
+	// Test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
