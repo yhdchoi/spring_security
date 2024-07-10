@@ -148,8 +148,8 @@ public class JwtService {
      * @param userDetails
      * @return String
      */
-    public String generateAccessToken(Map<String, Object> userClaims, UserDetails userDetails) {
-        return generateToken(userClaims, userDetails, accessJwtExpiration);
+    public String generateToken(Map<String, Object> userClaims, UserDetails userDetails) {
+        return buildToken(userClaims, userDetails, accessJwtExpiration);
     }
 
 
@@ -159,8 +159,8 @@ public class JwtService {
      * @param userDetails
      * @return String
      */
-    public String generateRefreshToken(UserDetails userDetails) {
-        return generateToken(new HashMap<>(), userDetails, refreshJwtExpiration);
+    public String generateToken(UserDetails userDetails) {
+        return buildToken(new HashMap<>(), userDetails, refreshJwtExpiration);
     }
 
 
@@ -171,7 +171,7 @@ public class JwtService {
      * @param userDetails
      * @return String
      */
-    public String generateToken(Map<String, Object> userClaims, UserDetails userDetails, long jwtExpiration) {
+    public String buildToken(Map<String, Object> userClaims, UserDetails userDetails, long jwtExpiration) {
         String userEmail = userDetails.getUsername();
         return Jwts.builder()
                 .claims(userClaims)
